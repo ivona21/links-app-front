@@ -1,0 +1,12 @@
+.example-fill-remaining-space {    
+    flex: 1 1 auto;
+  }
+
+  .title, .subtitle {
+      font-size: 12px;
+      font-style: italic;
+  }
+
+  .title {
+      font-size: 18px;
+  }

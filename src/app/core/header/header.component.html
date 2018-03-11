@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+    <div>
+        <div class="title">{{ title }}</div>       
+    </div>  
+    <button *ngIf="isAuth()" mat-button [routerLink]="['links']">Links</button>
+    <span class="example-fill-remaining-space"></span>
+    <button *ngIf="!isAuth()" mat-button [routerLink]="['register']">Register</button>
+    <button *ngIf="!isAuth()" mat-button [routerLink]="['login']">Login</button>
+    <button *ngIf="isAuth()" mat-button (click)="logout()">Logout</button>
+</mat-toolbar>

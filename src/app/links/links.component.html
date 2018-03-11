@@ -1,0 +1,28 @@
+<div fxLayout="row" class="margin-top-30">
+    <div fxFlexOffset="30" fxFlex="40">
+        <div>
+            <section class="mat-typography">
+                <h1> Add Link </h1>
+            </section>
+        </div>
+        <div class="form-container mat-elevation-z5">
+            <form [formGroup]="linkForm" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <input matInput type="url" id="link" name="link" formControlName="link" placeholder="link" />
+                </mat-form-field>
+                <button mat-raised-button color="accent" type="button" (click)="suggestTags()">
+                    Suggest tags</button>
+                <div *ngIf="suggestedTags.length > 0">
+                    <p>Suggested tags:</p>
+                    <span *ngFor="let tag of suggestedTags">
+                        {{tag.name}}, 
+                    </span>
+                </div>               
+                <mat-form-field>
+                    <input matInput type="text" id="tags" name="tags" formControlName="tags" placeholder="comma separated tags" />
+                </mat-form-field>
+                <button mat-raised-button color="accent" type="submit" [disabled]="!linkForm.valid">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
